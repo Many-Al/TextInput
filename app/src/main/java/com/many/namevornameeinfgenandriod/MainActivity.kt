@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             anzeigeTextView.text = zusammenfassung
         }
 
+
         buttonReset.setOnClickListener {
             // Setze alle Eingabefelder und Checkboxen zurück
             inputVorname.setText("")
