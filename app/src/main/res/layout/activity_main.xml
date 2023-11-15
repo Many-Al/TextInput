@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:backgroundTint="@color/design_default_color_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backFlash"
+        android:layout_width="38dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_22637" />
+
+    <TextView
+        android:id="@+id/eingabeformular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="EingabeFormular"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/backFlash"
+        app:layout_constraintStart_toEndOf="@+id/backFlash"
+        app:layout_constraintTop_toTopOf="@+id/backFlash" />
+
+    <EditText
+        android:id="@+id/vorname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="text"
+
+        android:hint="Vorname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/nachname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Nachname"
+        app:layout_constraintEnd_toEndOf="@+id/vorname"
+        app:layout_constraintStart_toStartOf="@+id/vorname"
+        app:layout_constraintTop_toBottomOf="@+id/vorname" />
+
+    <TextView
+        android:id="@+id/geschlecht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Geschlecht"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/nachname"
+        app:layout_constraintStart_toStartOf="@+id/nachname"
+        app:layout_constraintTop_toBottomOf="@+id/nachname" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/geschlecht">
+
+        <RadioButton
+            android:id="@+id/diverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=" Diverse" />
+
+        <RadioButton
+            android:id="@+id/mann"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Mann" />
+
+        <RadioButton
+            android:id="@+id/frau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="  Frau" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/katze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <CheckBox
+        android:id="@+id/hunde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/katze"
+        app:layout_constraintStart_toStartOf="@+id/katze"
+        app:layout_constraintTop_toBottomOf="@+id/katze" />
+
+    <TextView
+        android:id="@+id/magstdukatze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="Magst du Katzen?"
+        app:layout_constraintBottom_toBottomOf="@+id/katze"
+        app:layout_constraintEnd_toStartOf="@+id/katze"
+        app:layout_constraintTop_toTopOf="@+id/katze"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <TextView
+        android:id="@+id/magstduhunde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Magst du Hunden?"
+        app:layout_constraintBottom_toBottomOf="@+id/hunde"
+        app:layout_constraintEnd_toStartOf="@+id/hunde"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/magstdukatze"
+        app:layout_constraintTop_toBottomOf="@+id/magstdukatze"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <Button
+        android:id="@+id/einrichten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Einrichten"
+        app:layout_constraintEnd_toStartOf="@+id/hunde"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/magstduhunde"
+        app:layout_constraintTop_toBottomOf="@+id/magstduhunde" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="@+id/einrichten"
+        app:layout_constraintStart_toEndOf="@+id/einrichten"
+        app:layout_constraintTop_toTopOf="@+id/einrichten"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:text="die eingaben hier anzeigen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
